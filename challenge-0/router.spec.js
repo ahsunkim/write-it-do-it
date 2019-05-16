@@ -55,9 +55,10 @@ describe('Challenge 0 - Example', () => {
       expect('your test').to.equal('goes here!');
     });
 
+
     xit('response data should be the same length as db data', async () => {
       const response = await agent.get('/api/dogs');
-
+      
       // your expect assertion here...
       expect('your test').to.equal('goes here!');
     });
