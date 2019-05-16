@@ -51,21 +51,21 @@ describe('Challenge 2 - Sequelize model', () => {
       const response = await Dog.findPuppies();
 
       // your expect assertion here...
-      expect(Array.isArray(response.body)).to.equal(true);
+      expect(Array.isArray(response)).to.equal(true);
     });
 
     it('length of response should match how many puppies are in the db', async () => {
       const response = await Dog.findPuppies();
 
       // your expect assertion here...
-      expect(response.body.length).to.equal(2);
+      expect(response.length).to.equal(2);
     });
 
     it('data in response should match puppy data in db', async () => {
       const response = await Dog.findPuppies();
 
       // your expect assertion here...
-      expect(response.body).to.equal([
+      expect(response).to.equal([
         {
           name: 'Spike',
           age: 1,

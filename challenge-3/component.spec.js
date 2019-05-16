@@ -22,13 +22,13 @@ describe('Challenge 3 - React Component', () => {
     {
       id: 1,
       name: 'Cody',
-      age: 5
+      age: 5,
     },
     {
       id: 2,
       name: 'Spike',
-      age: 1
-    }
+      age: 1,
+    },
   ];
 
   // ------------------------------------
@@ -37,28 +37,33 @@ describe('Challenge 3 - React Component', () => {
   // you can use `wrapper` and `doggies`
   // to help make assertions!
   describe('<DogList /> component', () => {
-    xit('renders a `ul` to hold the dogs', () => {
+    it('renders a `ul` to hold the dogs', () => {
       const wrapper = shallow(<DogList dogs={doggies} />);
 
       // your expect assertion here...
       expect(wrapper.find('ul')).to.have.length(1);
     });
 
-    xit('there should be an `li` in the `ul` for each dog in the list (dog list is passed in as props)', () => {
+    it('there should be an `li` in the `ul` for each dog in the list (dog list is passed in as props)', () => {
       const wrapper = shallow(<DogList dogs={doggies} />);
 
       // your expect assertion here...
       expect(wrapper.find('li')).to.have.length(2);
     });
 
-    xit('each `li` should display the name of each dog', () => {
+    it('each `li` should display the name of each dog', () => {
       const wrapper = shallow(<DogList dogs={doggies} />);
 
       // your expect assertion here...
-      expect(wrapper.find('li').at(0).text()).to.contain('Cody');
+      expect(
+        wrapper
+          .find('li')
+          .at(0)
+          .text()
+      ).to.contain('Cody');
     });
 
-    xit('there should be no `li` elements in the `ul` if there are no dogs in the list', () => {
+    it('there should be no `li` elements in the `ul` if there are no dogs in the list', () => {
       const wrapper = shallow(<DogList dogs={[]} />);
 
       // your expect assertion here...
