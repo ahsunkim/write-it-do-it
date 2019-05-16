@@ -22,16 +22,16 @@ describe('Challenge 2 - Sequelize model', () => {
   const dogData = [
     {
       name: 'Cody',
-      age: 5
+      age: 5,
     },
     {
       name: 'Spike',
-      age: 1
+      age: 1,
     },
     {
       name: 'BabyPup',
-      age: 0
-    }
+      age: 0,
+    },
   ];
 
   beforeEach(async () => {
@@ -51,21 +51,30 @@ describe('Challenge 2 - Sequelize model', () => {
       const response = await Dog.findPuppies();
 
       // your expect assertion here...
-      expect('your test').to.equal('goes here!');
+      expect(Array.isArray(response)).to.equal(true);
     });
 
     xit('length of response should match how many puppies are in the db', async () => {
       const response = await Dog.findPuppies();
 
       // your expect assertion here...
-      expect('your test').to.equal('goes here!');
+      expect(response.length).to.equal(2);
     });
 
     xit('data in response should match puppy data in db', async () => {
       const response = await Dog.findPuppies();
 
       // your expect assertion here...
-      expect('your test').to.equal('goes here!');
+      expect(response).to.equal([
+        {
+          name: 'Spike',
+          age: 1,
+        },
+        {
+          name: 'BabyPup',
+          age: 0,
+        },
+      ]);
     });
   });
 });
